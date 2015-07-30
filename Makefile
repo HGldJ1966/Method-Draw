@@ -84,7 +84,6 @@ $(COMPILED_JS):
 		--compilation_level SIMPLE_OPTIMIZATIONS \
 		$(CLOSURE_JS_ARGS) \
 		--js_output_file $(COMPILED_JS)
-	rm editor/method-draw.compiled.js
 
 compile: $(COMPILED_JS) $(COMPILED_CSS)
 
