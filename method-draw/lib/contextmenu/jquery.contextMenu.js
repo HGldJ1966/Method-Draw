@@ -141,9 +141,9 @@ if(jQuery)( function() {
 				
 				
 				// Disable text selection
-				if( $.browser.mozilla ) {
+				if( $.browser && $.browser.mozilla ) {
 					$('#' + o.menu).each( function() { $(this).css({ 'MozUserSelect' : 'none' }); });
-				} else if( $.browser.msie ) {
+				} else if( $.browser && $.browser.msie ) {
 					$('#' + o.menu).each( function() { $(this).bind('selectstart.disableTextSelect', function() { return false; }); });
 				} else {
 					$('#' + o.menu).each(function() { $(this).bind('mousedown.disableTextSelect', function() { return false; }); });
