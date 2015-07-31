@@ -4119,7 +4119,13 @@
         loadSvgString(svgedit.utilities.decode64(src));
       });
     };
-    
+
+    Editor.getDataURI = function() {
+      var pre = 'data:image/svg+xml;base64,';
+      var svg = Editor.canvas.svgCanvasToString();
+      return pre + svgedit.utilities.encode64(svg);
+    };
+
     Editor.addExtension = function() {
       var args = arguments;
       
