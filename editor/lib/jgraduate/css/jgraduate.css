@@ -55,7 +55,7 @@ div.jGraduate_Swatch {
 }
 div.jGraduate_GradContainer {
 	border: solid #000 1px;
-	background-image: url(../images/map-opacity.png); 
+	background-image: url(/third_party/javascript-khansrc/method-draw-khansrc/method-draw/images/map-opacity.png); 
 	background-position: 0px 0px;
 	height: 256px;
 	width: 256px;
@@ -93,7 +93,7 @@ div.jGraduate_Opacity {
 	border: 2px inset #eee;
 	margin-top: 14px;
 	background-color: black;
-	background-image: url(../images/Maps.png);
+	background-image: url(/third_party/javascript-khansrc/method-draw-khansrc/method-draw/images/Maps.png);
 	background-position: 0px -2816px;
 	height: 20px;
 	cursor: ew-resize;

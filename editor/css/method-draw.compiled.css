@@ -50,10 +50,10 @@ li.jGraduate_tab_current{background:#fff;border-radius:3px 3px 0 0}
 .jGraduate_gradPick{display:none;overflow:visible}
 .jGraduate_tabs{position:relative;background-color:#ddd;padding:10px 10px 0 10px;margin:-20px -20px 20px -20px;border-radius:3px 3px 0 0}
 div.jGraduate_Swatch{float:left;margin:0 15px 0 0}
-div.jGraduate_GradContainer{border:solid #000 1px;background-image:url(../images/map-opacity.png);background-position:0 0;height:256px;width:256px;position:relative}
+div.jGraduate_GradContainer{border:solid #000 1px;background-image:url(/third_party/javascript-khansrc/method-draw-khansrc/method-draw/images/map-opacity.png);background-position:0 0;height:256px;width:256px;position:relative}
 div.jGraduate_GradContainer div.grad_coord{background:rgba(0,0,0,0.8);border:2px solid white;border-radius:15px;-moz-border-radius:5px;width:14px;height:14px;position:absolute;margin:-7px -7px;top:0;left:0;text-align:center;font-size:8px;line-height:14px;color:white;text-decoration:none;cursor:pointer;-moz-user-select:none;-webkit-user-select:none}
 .jGraduate_AlphaArrows{position:absolute;margin-top:-10px;margin-left:250.5px}
-div.jGraduate_Opacity{border:2px inset #eee;margin-top:14px;background-color:black;background-image:url(../images/Maps.png);background-position:0 -2816px;height:20px;cursor:ew-resize}
+div.jGraduate_Opacity{border:2px inset #eee;margin-top:14px;background-color:black;background-image:url(/third_party/javascript-khansrc/method-draw-khansrc/method-draw/images/Maps.png);background-position:0 -2816px;height:20px;cursor:ew-resize}
 div.jGraduate_StopSlider{margin:-10px 0 0 -10px;width:276px;overflow:visible;background:white;height:45px;cursor:pointer}
 div.jGraduate_StopSection{width:120px;float:left}
 div.jGraduate_StopSection.jGraduate_SpreadMethod{display:none}
