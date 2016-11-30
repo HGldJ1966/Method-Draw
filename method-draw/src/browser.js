@@ -48,31 +48,6 @@ var supportsXpath_ = (function() {
   return !!document.evaluate;
 })();
 
-// segList functions (for FF1.5 and 2.0)
-var supportsPathReplaceItem_ = (function() {
-  var path = document.createElementNS(svgns, 'path');
-  path.setAttribute('d','M0,0 10,10');
-  var seglist = path.pathSegList;
-  var seg = path.createSVGPathSegLinetoAbs(5,5);
-  try {
-    seglist.replaceItem(seg, 0);
-    return true;
-  } catch(err) {}
-  return false;
-})();
-
-var supportsPathInsertItemBefore_ = (function() {
-  var path = document.createElementNS(svgns,'path');
-  path.setAttribute('d','M0,0 10,10');
-  var seglist = path.pathSegList;
-  var seg = path.createSVGPathSegLinetoAbs(5,5);
-  try {
-    seglist.insertItemBefore(seg, 0);
-    return true;
-  } catch(err) {}
-  return false;
-})();
-
 // text character positioning (for IE9)
 var supportsGoodTextCharPos_ = (function() {
    var retValue = false;
@@ -152,6 +127,23 @@ var supportsNativeSVGTransformLists_ = (function() {
   return rxform.getItem(0) == t1;
 })();
 
+var supportsBlobs_ = (function() {
+  if (typeof Blob != 'function') return false;
+  // check if download is supported
+  var svg = new Blob(
+    ["<svg xmlns='http://www.w3.org/2000/svg'></svg>"],
+    {type: "image/svg+xml;charset=utf-8"}
+  );
+  var img = new Image();
+  var support = false;
+  img.onload = function()  { svgedit.browser.supportsBlobs = function() {return true} };
+  img.onerror = function() { svgedit.browser.supportsBlobs = function() {return false} };
+  img.src = URL.createObjectURL(svg);
+  return false;
+})();
+
+
+
 // Public API
 
 svgedit.browser.isOpera = function() { return isOpera_; }
@@ -166,8 +158,6 @@ svgedit.browser.isTouch = function() { return isTouch_; }
 svgedit.browser.supportsSelectors = function() { return supportsSelectors_; }
 svgedit.browser.supportsXpath = function() { return supportsXpath_; }
 
-svgedit.browser.supportsPathReplaceItem = function() { return supportsPathReplaceItem_; }
-svgedit.browser.supportsPathInsertItemBefore = function() { return supportsPathInsertItemBefore_; }
 svgedit.browser.supportsPathBBox = function() { return supportsPathBBox_; }
 svgedit.browser.supportsHVLineContainerBBox = function() { return supportsHVLineContainerBBox_; }
 svgedit.browser.supportsGoodTextCharPos = function() { return supportsGoodTextCharPos_; }
@@ -175,7 +165,7 @@ svgedit.browser.supportsEditableText = function() { return supportsEditableText_
 svgedit.browser.supportsGoodDecimals = function() { return supportsGoodDecimals_; }
 svgedit.browser.supportsNonScalingStroke = function() { return supportsNonScalingStroke_; }
 svgedit.browser.supportsNativeTransformLists = function() { return supportsNativeSVGTransformLists_; }
-
+svgedit.browser.supportsBlobs = function() {return supportsBlobs_; }
 }
 
 })();
